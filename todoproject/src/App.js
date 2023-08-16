@@ -2,7 +2,7 @@
 import Form from "./Components/Form";
 import Header from "./Components/Header";
 import RenderList from "./Components/RenderList";
-
+import "./main.css"
 import {useState} from 'react';
 function App() {
   const [itemTodo,setItemTodo] = useState("");

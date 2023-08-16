@@ -1,7 +1,7 @@
 
 
 import shortid from "shortid";
-
+import style from './style.module.css';
 
 const Form = ({itemTodo,setItemTodo,todoList,setTodoList})=>{
     
@@ -12,16 +12,16 @@ const Form = ({itemTodo,setItemTodo,todoList,setTodoList})=>{
     const handleAddTodo = (e)=>{
         e.preventDefault();
         setTodoList([...todoList,{name:itemTodo,id:shortid.generate()}])
-        console.log(todoList)
+        setItemTodo("");
         
     }
     
     return (
-        <div>
+        <div className={style.divForm}>
             <form onSubmit={handleAddTodo}>
-                <label>Todo Name: </label>
-                <input type="text" onChange={handleChangeInput}></input>
-                <button>ADD</button>
+                <label>Item: </label>
+                <input  placeholder="Input Here" type="text" onChange={handleChangeInput} value={itemTodo}></input>
+                <button className={style.formbtn} >ADD</button>
             </form>
         </div>
     )
