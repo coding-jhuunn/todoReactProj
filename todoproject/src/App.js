@@ -7,6 +7,7 @@ import {useState} from 'react';
 function App() {
   const [itemTodo,setItemTodo] = useState("");
   const [todoList,setTodoList] = useState([]);
+  const [error,setError] = useState(false);
   return (
     <div className="App">
       <Header></Header>
@@ -15,6 +16,8 @@ function App() {
         setItemTodo={setItemTodo}
         todoList={todoList}
         setTodoList={setTodoList}
+        error={error}
+        setError={setError}
       ></Form>
       <RenderList
         todoList={todoList}

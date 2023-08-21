@@ -3,7 +3,7 @@ import PerItemRender from "./PerItemRender";
 const RenderList = ({todoList,setTodoList}) =>{
     return (
         <div>
-            {todoList.map((index=>
+            {todoList.length<=0?"Empty List ":todoList.map((index=>
                 <PerItemRender
                 todoList={todoList}
                 setTodoList={setTodoList}
