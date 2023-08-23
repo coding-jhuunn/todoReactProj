@@ -8,6 +8,7 @@ function App() {
   const [itemTodo,setItemTodo] = useState("");
   const [todoList,setTodoList] = useState([]);
   const [error,setError] = useState(false);
+  const [duplicate,setDuplicate] = useState(false);
   return (
     <div className="App">
       <Header></Header>
@@ -18,6 +19,8 @@ function App() {
         setTodoList={setTodoList}
         error={error}
         setError={setError}
+        duplicate={duplicate}
+        setDuplicate={setDuplicate}
       ></Form>
       <RenderList
         todoList={todoList}

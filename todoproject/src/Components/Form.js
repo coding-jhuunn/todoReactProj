@@ -1,9 +1,7 @@
 
-
 import shortid from "shortid";
 import style from './style.module.css';
-
-const Form = ({itemTodo,setItemTodo,todoList,setTodoList,error,setError})=>{
+const Form = ({itemTodo,setItemTodo,todoList,setTodoList,error,setError,duplicate,setDuplicate})=>{
     
     const CheckIfExsts = (arr,value) =>{
         const found = arr.some(el => el.name === value);
@@ -11,15 +9,11 @@ const Form = ({itemTodo,setItemTodo,todoList,setTodoList,error,setError})=>{
             return true
         }
     }
- 
-
-    
-  
     const handleChangeInput = (e)=>{
             setItemTodo(e.target.value);
+            
     }
     const handleAddTodo = (e)=>{
-        
         e.preventDefault();
         if(itemTodo.length===0){
             setError(true);
@@ -27,24 +21,24 @@ const Form = ({itemTodo,setItemTodo,todoList,setTodoList,error,setError})=>{
         }
         else if (itemTodo.length>0){
             if(CheckIfExsts(todoList, itemTodo)){
-                console.log("exists");
+                setDuplicate(true);
             }
             else{
                 setTodoList([...todoList,{name:itemTodo,id:shortid.generate()}]);
                 setItemTodo("");
                 setError(false);
-                console.log("not exists")
+                setDuplicate(false);
             }
         }  
     }
-    
     return (
         <div className={style.divForm}>
             <form onSubmit={handleAddTodo} className={style.mainForm}>
                 <div>
                     <input  placeholder="Input Name" type="text" onChange={handleChangeInput} value={itemTodo}></input>
                 </div>
-                {error&&itemTodo.length<=0?<label>Input should be not empty</label>:""}
+                {error&&itemTodo.length<=0?<label>Input should be not empty.</label>:
+                duplicate?<label>Input is already existing. Try again.</label>:""}
                 <div>
                     <button className={style.formbtn} >ADD</button>
                 </div>
