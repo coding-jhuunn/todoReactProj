@@ -17,7 +17,6 @@ const Form = ({itemTodo,setItemTodo,todoList,setTodoList,error,setError,duplicat
         e.preventDefault();
         if(itemTodo.length===0){
             setError(true);
-            console.log("none")
         }
         else if (itemTodo.length>0){
             if(CheckIfExsts(todoList, itemTodo)){
@@ -35,13 +34,20 @@ const Form = ({itemTodo,setItemTodo,todoList,setTodoList,error,setError,duplicat
         <div className={style.divForm}>
             <form onSubmit={handleAddTodo} className={style.mainForm}>
                 <div>
-                    <input  placeholder="Input Name" type="text" onChange={handleChangeInput} value={itemTodo}></input>
+                    <input  placeholder="Input Name" 
+                    type="text" 
+                    onChange={handleChangeInput} 
+                    value={itemTodo}>
+
+                    </input>
                 </div>
-                {error&&itemTodo.length<=0?<label>Input should be not empty.</label>:
-                duplicate?<label>Input is already existing. Try again.</label>:""}
-                <div>
+                {error&&itemTodo.length<=0?<label className={style.labelMessage} >Input should be not empty.</label>:
+                duplicate?<label className={style.labelMessage}>Input is already existing. Try again.</label>:""}
+                <div className={style.divBtn}>
                     <button className={style.formbtn} >ADD</button>
                 </div>
+
+                
             </form>
         </div>
     )

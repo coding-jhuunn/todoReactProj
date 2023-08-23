@@ -5,16 +5,21 @@
     margin-top: 20px !important;
     margin-bottom: 10px;
     padding: 20px;
-   color:rgb(247, 255, 229);
+    color:rgb(247, 255, 229);
     background-color: rgb(160, 196, 157);
 }
 
 .divForm{
     display: flex;
     justify-content: center;
+   
 }
-
-/* .mainForm{
+.labelMessage{
+    color: rgb(194, 16, 16);
+    font-size: 14px;
+    
+}
+.mainForm{
     width: 18%;
     padding: 50px;
     font-size: large;
@@ -22,8 +27,17 @@
     font-weight: bold;
     
 }
-.formbtn{
+input{
+    height: 30px;
     width: 100%;
+}
+.divBtn{
+    display: flex;
+    justify-content: center;
+}
+.formbtn{
+    height: 30px;
+    width: 50%;
     font-family: 'Courier New', Courier, monospace;
     color: rgb(160, 196, 157);
     border: 3px  solid rgb(160, 196, 157);
@@ -34,5 +48,5 @@
 .formbtn:hover{
     color: black;
     background-color: rgb(247, 255, 229);
-} */
+}
 
