@@ -12,6 +12,8 @@
 .divForm{
     display: flex;
     justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
    
 }
 .labelMessage{
@@ -30,6 +32,7 @@
 input{
     height: 30px;
     width: 100%;
+    margin-bottom: 10px;
 }
 .divBtn{
     display: flex;
@@ -37,16 +40,40 @@ input{
 }
 .formbtn{
     height: 30px;
-    width: 50%;
+    width: 100%;
     font-family: 'Courier New', Courier, monospace;
     color: rgb(160, 196, 157);
     border: 3px  solid rgb(160, 196, 157);
     border-radius: 100px;
     background-color: white;
-    margin-top: 10px;
+   
 }
 .formbtn:hover{
     color: black;
     background-color: rgb(247, 255, 229);
 }
 
+.mainRenderDiv{
+
+    display: flex;
+    justify-content: center;
+}
+
+.renderItemDiv{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.itemNameDiv{
+    
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 100%;
+    width: 200px;
+    border-radius: 2px;
+}
+.itemBtnDiv{
+    width: 300px;
+}

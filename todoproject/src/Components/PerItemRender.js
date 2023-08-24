@@ -1,3 +1,5 @@
+import style from './style.module.css';
+
 const PerItemRender = ({todoList,setTodoList,todoIndex})=>{
     
     const handleDelete=(e)=>{
@@ -6,9 +8,13 @@ const PerItemRender = ({todoList,setTodoList,todoIndex})=>{
     }
     
     return (
-        <div>
-            <h3>{todoIndex.name}</h3>
-            <button onClick={handleDelete}>Delete</button>
+        <div className={style.renderItemDiv}>
+            <div className={style.itemNameDiv}>
+                <label>{todoIndex.name}</label>
+            </div>
+            <div className={style.itemBtnDiv}>
+                <button className={style.formbtn} onClick={handleDelete}>Delete</button>
+            </div>
         </div>
     )
 }

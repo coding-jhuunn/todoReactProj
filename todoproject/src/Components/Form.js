@@ -38,7 +38,6 @@ const Form = ({itemTodo,setItemTodo,todoList,setTodoList,error,setError,duplicat
                     type="text" 
                     onChange={handleChangeInput} 
                     value={itemTodo}>
-
                     </input>
                 </div>
                 {error&&itemTodo.length<=0?<label className={style.labelMessage} >Input should be not empty.</label>:
@@ -46,8 +45,6 @@ const Form = ({itemTodo,setItemTodo,todoList,setTodoList,error,setError,duplicat
                 <div className={style.divBtn}>
                     <button className={style.formbtn} >ADD</button>
                 </div>
-
-                
             </form>
         </div>
     )
